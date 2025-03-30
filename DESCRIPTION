@@ -1,0 +1,13 @@
+Package: MusicStats
+Type: Package
+Title: Analyze music statistics using Spotify API
+Version: 0.1.0
+Author: Kaitlyn Iliev
+Maintainer: ilievkaitlyn@gmail.com
+Description: A package that uses Spotify's Web API with lyric analysis to
+provide a toolkit for exploring music through data and text. The package allows
+the user to fetch song metadata, analyze lyrical sentiment, visualize word trends,
+and compare artists.
+License: GNU
+Encoding: UTF-8
+LazyData: true

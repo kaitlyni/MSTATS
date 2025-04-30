@@ -1,0 +1,81 @@
+---
+title: Core functions of MSTATS
+output: html_document
+---
+
+##1: get_sentiment()
+
+**Purpose**
+Perform sentiment analysis on lyrics using tidytext package to determine the number of positive and negative words withing a song, and compute a value (positive or negative) to determine overall sentiment.
+
+**Inputs**
+- 'lyrics_df' (dataframe): A dataframe containing song lyrics, including columns named 'song' and 'lyrics'
+- 'song_title' (string): The title of the song to analyze
+
+**Outputs**
+A dataframe that includes:
+- number of negative words
+- number of positive wprds
+- the difference between positive and negative
+
+**Example**
+```r
+get_sentiment(downward_lyrics, "Line")
+```
+
+##2: word_cloud()
+
+**Purpose**
+Generate a word cloud plot of the most frequently used words in the artist's songs.
+
+**Inputs**
+- 'lyrics_df' (dataframe): A dataframe containing song lyrics, including columns named 'song' and 'lyrics'
+- 'artist_name' (string): The artist that is going to be analyzed
+
+**Outputs**
+Word cloud visualization of the most used words amongst the given songs.
+
+**Example**
+```r
+word_cloud(downward_lyrics, "Downward")
+```
+
+##3: compare_artists()
+
+**Purpose**
+Compare lyrical sentiment analysis between two artists and visualizes sentiment score and word frequency distribution.
+
+**Inputs**
+- 'artist_lyrics_1' (dataframe): A dataframe containing song lyrics, including columns named 'song' and 'lyrics'
+- 'artist_lyrics_2' (dataframe): A dataframe containing song lyrics, including columns named 'song' and 'lyrics'
+- 'artist_name_1' (string): Name of first artist
+- 'artist_name_2' (string): Name of second artist
+
+**Outputs**
+- A plot comparing sentiment scores of both artists
+- A summary of the sentiment plot
+- A plot comparing word frequency distribution between the top 10 most used words by both artists.
+
+**Example**
+```r
+compare_artists(downward_lyrics, ethelcain_lyrics, "Downward", "Ethel Cain")
+```
+
+##4: compare_songs()
+
+**Purpose**
+Compares sentiment scores and word contribution between two songs
+
+**Inputs**
+- 'lyrics_df' (dataframe): A dataframe containing song lyrics, including columns named 'song' and 'lyrics'
+- 'song_title_1' (string): The title of the first song to analyze
+- 'song_title_2' (string): The title of the second song to analyze
+
+**Outputs**
+- Barplot comparing overall sentiment of two songs
+- Plot showing top contributing sentiment words per song
+
+**Example**
+```r
+compare_songs(ethelcain_lyrics, "American Teenager", "Strangers")
+```
